@@ -3,7 +3,7 @@ from bs4 import BeautifulSoup as bs
 from pyperclip import copy
 
 site = requests.get(input("SITE >"))
-blackwords = ",".join(input("BLACKWORDS (comma separated) >"))
+blackwords = (input("BLACKWORDS (comma separated) >")).split(",")
 blackwords = [each.casefold() for each in blackwords]
 
 site = bs(site.text)
